@@ -28,6 +28,19 @@ app.add_middleware(
 
 class URLInput(BaseModel):
     url: str
+@app.post("/predict_from_url")
+def predict_from_url(data: URLInput):
+    print(f"Received URL: {data.url}")  # Debug log
+
+    try:
+        features = extract_features_from_url(data.url)
+        arr = np.array(features).reshape(1, -1)
+        prediction = xgb_model.predict(arr)
+        print(f"Prediction: {prediction[0]}")  # Debug log
+        return {"prediction": int(prediction[0])}
+    except Exception as e:
+        print(f"Prediction failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
 
 @app.post("/predict_from_url")
 def predict_from_url(data: URLInput):
