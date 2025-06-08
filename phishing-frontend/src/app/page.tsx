@@ -72,7 +72,7 @@ export default function PhishingDetection() {
               <h2 className="text-6xl md:text-2xl lg:text-3xl font-bold tracking-tight text-[#111] leading-snug">
                 PhishGuard
                 <span className="block text-base md:text-lg font-medium italic text-gray-600">
-                  AI that spots phishing, so you don&#39;t have to.
+                  AI that spots phishing, so you don&apos;t have to.
                 </span>
               </h2>
             </div>
