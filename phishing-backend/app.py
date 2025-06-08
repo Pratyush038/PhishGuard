@@ -17,10 +17,7 @@ except Exception as e:
 # Enable CORS for local dev + deployed frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",  # Local dev
-        "https://phish-guard-doy4tbype-pratyush038s-projects.vercel.app",  # Vercel frontend
-    ],
+    allow_origins=["https://phish-guard-doy4tbype-pratyush038s-projects.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
