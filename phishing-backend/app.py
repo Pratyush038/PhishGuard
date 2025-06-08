@@ -1,9 +1,4 @@
-import os
-print("Current working directory:", os.getcwd())
-print("Files in working directory:", os.listdir('.'))
-
-
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import joblib
 import numpy as np
@@ -12,15 +7,20 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-rf_model = joblib.load("rf_model.pkl")
-xgb_model = joblib.load("xgb_model.pkl")
+# Load models
+try:
+    rf_model = joblib.load("rf_model.pkl")
+    xgb_model = joblib.load("xgb_model.pkl")
+except Exception as e:
+    raise RuntimeError(f"Error loading models: {e}")
 
+# Enable CORS for local dev + deployed frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",
-        "https://phishguard.vercel.app",
-    ],  # or "*" for all origins (less secure)
+        "http://localhost:3000",  # Local dev
+        "https://phish-guard-doy4tbype-pratyush038s-projects.vercel.app",  # Vercel frontend
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -31,7 +31,10 @@ class URLInput(BaseModel):
 
 @app.post("/predict_from_url")
 def predict_from_url(data: URLInput):
-    features = extract_features_from_url(data.url)
-    arr = np.array(features).reshape(1, -1)
-    prediction = xgb_model.predict(arr)
-    return {"prediction": int(prediction[0])}
+    try:
+        features = extract_features_from_url(data.url)
+        arr = np.array(features).reshape(1, -1)
+        prediction = xgb_model.predict(arr)
+        return {"prediction": int(prediction[0])}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
