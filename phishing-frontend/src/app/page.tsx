@@ -226,7 +226,7 @@ export default function PhishingDetection() {
           </div>
           <div className="flex items-center space-x-4 justify-center sm:justify-end text-gray-700">
             <a
-              href="https://github.com/Pratyush038/PhishGuard"
+              href="https://github.com/Pratyush038"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-80 opacity-70 transition-opacity flex items-center space-x-1"
