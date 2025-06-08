@@ -29,7 +29,8 @@ export default function PhishingDetection() {
 
     try {
       setLoading(true);
-      const res = await fetch("https://phishguard-y4y8.onrender.com/predict_from_url", {
+      const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL;
+      const res = await fetch(`${apiBase}/predict_from_url`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
