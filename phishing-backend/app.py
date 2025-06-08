@@ -1,3 +1,8 @@
+import os
+print("Current working directory:", os.getcwd())
+print("Files in working directory:", os.listdir('.'))
+
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
