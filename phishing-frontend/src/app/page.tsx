@@ -109,7 +109,7 @@ export default function PhishingDetection() {
                     <br />
                     Each URL is parsed to extract 30 handcrafted features,
                     including indicators such as the presence of an IP address,
-                    use of the '@' symbol, number of subdomains, URL length,
+                    use of the &apos;@&apos; symbol, number of subdomains, URL length,
                     HTTPS usage, and more.
                     <br />
                     <br />
