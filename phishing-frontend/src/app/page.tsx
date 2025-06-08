@@ -26,7 +26,6 @@ export default function PhishingDetection() {
       alert("Please enter a URL.");
       return;
     }
-
     try {
       setLoading(true);
       const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL;
