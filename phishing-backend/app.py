@@ -17,7 +17,10 @@ xgb_model = joblib.load("xgb_model.pkl")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # or "*" for all origins (less secure)
+    allow_origins=[
+        "http://localhost:3000",
+        "https://phishguard.vercel.app",
+    ],  # or "*" for all origins (less secure)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
