@@ -16,17 +16,6 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const LinkedInIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5"
-    fill="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path d="M20.447 20.452H16.9v-5.569c0-1.327-.026-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664H9.365V9h3.413v1.561h.05c.476-.9 1.637-1.852 3.37-1.852 3.605 0 4.27 2.372 4.27 5.458v6.285zM5.337 7.433a1.98 1.98 0 110-3.959 1.98 1.98 0 010 3.959zm1.725 13.019H3.61V9h3.452v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.73v20.54C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.27V1.73C24 .774 23.2 0 22.225 0z" />
-  </svg>
-);
-
 export default function PhishingDetection() {
   const [url, setUrl] = useState("");
   const [prediction, setPrediction] = useState<number | null>(null);
@@ -83,7 +72,7 @@ export default function PhishingDetection() {
               <h2 className="text-6xl md:text-2xl lg:text-3xl font-bold tracking-tight text-[#111] leading-snug">
                 PhishGuard
                 <span className="block text-base md:text-lg font-medium italic text-gray-600">
-                  AI that spots phishing, so you don't have to.
+                  AI that spots phishing, so you don&#39;t have to.
                 </span>
               </h2>
             </div>
