@@ -1,27 +1,15 @@
-# Ignore node modules and Next.js build
-node_modules/
-phishing-frontend/.next/
-phishing-frontend/package-lock.json
-
-# Python environment and cache
+# Python
 env/
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.pkl
-
-# VSCode or other editor files
-.vscode/
-*.code-workspace
-
-# OS-specific files
-.DS_Store
-Thumbs.db
-
-# Jupyter notebook checkpoints
+*.py[cod]
 *.ipynb_checkpoints/
 
-# Logs and temp files
+# Node & Next.js
+node_modules/
+.next/
+out/
+
+# OS / Editor
+.DS_Store
+.vscode/
 *.log
-*.tmp
