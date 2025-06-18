@@ -6,30 +6,31 @@ PhishGuard is a full-stack phishing detection system that leverages machine lear
 
 ## Project Structure
 
+```text
 PhishGuard/
-├── phishing-backend/ # Machine learning API and utilities
-│ ├── app.py # Optional Streamlit interface
-│ ├── main.ipynb # Feature exploration and modeling notebook
-│ ├── feature_extractor.py # Functions for extracting URL features
-│ ├── test_features.py # Unit tests for feature extraction
-│ ├── rf_model.pkl # Trained Random Forest model
-│ ├── xgb_model.pkl # Trained XGBoost model
-│ ├── phishing.csv # Dataset for training/testing
-│ ├── requirements.txt # Python dependencies
-│ ├── runtime.txt # Python runtime version (for deployment)
-│ └── Procfile # Deployment entrypoint for backend
+├── phishing-backend/           # Machine learning API and utilities
+│   ├── app.py                  # Optional Streamlit interface
+│   ├── main.ipynb              # Feature exploration and modeling notebook
+│   ├── feature_extractor.py   # Functions for extracting URL features
+│   ├── test_features.py        # Unit tests for feature extraction
+│   ├── rf_model.pkl            # Trained Random Forest model
+│   ├── xgb_model.pkl           # Trained XGBoost model
+│   ├── phishing.csv            # Dataset for training/testing
+│   ├── requirements.txt        # Python dependencies
+│   ├── runtime.txt             # Python runtime version (for deployment)
+│   └── Procfile                # Deployment entrypoint for backend
 │
-├── phishing-frontend/ # Frontend built with Next.js + shadcn/ui
-│ ├── src/ # Source directory (components, pages)
-│ ├── public/ # Static assets
-│ ├── package.json # NPM project definition
-│ ├── next.config.ts # Next.js configuration
-│ ├── tsconfig.json # TypeScript config
-│ ├── postcss.config.mjs # Tailwind PostCSS config
-│ └── eslint.config.mjs # ESLint rules
+├── phishing-frontend/          # Frontend built with Next.js + shadcn/ui
+│   ├── src/                    # Source directory (components, pages)
+│   ├── public/                 # Static assets
+│   ├── package.json            # NPM project definition
+│   ├── next.config.ts          # Next.js configuration
+│   ├── tsconfig.json           # TypeScript config
+│   ├── postcss.config.mjs      # Tailwind PostCSS config
+│   └── eslint.config.mjs       # ESLint rules
 │
-└── .gitignore # Git ignored files
-
+└── .gitignore                  # Git ignored files
+```
 ---
 
 ## Features
