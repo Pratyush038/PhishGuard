@@ -66,29 +66,29 @@ Both are evaluated on the same dataset and exposed via FastAPI endpoints.
 ### Backend
 
 1. Navigate to the backend folder:
-cd phishing-backend
+`cd phishing-backend`
 
 2. Create a virtual environment and activate it:
-python -m venv venv
-#### macOS/Linux:
-source venv/bin/activate
-#### Windows:
-venv\Scripts\activate
+`python -m venv venv`
+• macOS/Linux:
+`source venv/bin/activate`
+• Windows:
+`venv\Scripts\activate`
 
 3. Install dependencies:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
-5. Run the API:
-uvicorn feature_extractor:app --reload
+4. Run the API:
+`uvicorn feature_extractor:app --reload`
 
 ### Frontend
 
 1. Navigate to the frontend folder:
-cd phishing-frontend
+`cd phishing-frontend`
 2. Install dependencies:
-npm install
+`npm install`
 3. Run the development server:
-npm run dev
+`npm run dev`
 
 ---
 
